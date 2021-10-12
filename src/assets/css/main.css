@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+@media screen and (max-width : 850px){
+    .Navbar .navMenu{
+        display: none;
+    }
+    .Navbar #hidden{
+        position: absolute;
+        left: 0;
+        top: 5em;
+        height: 230px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        z-index: 20;
+        transition: 1s ease;
+    }
+}
+@media screen and (min-width:851px){
+    .Navbar #hidden{
+        height: 0;
+        display: none;
+    }
+    .Navbar .navMenu{
+        display: flex;
+        align-items: center;
+        font-size: 0.7em;
+    }
+}
+
+                                                /* Home */
+.Home{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../imgs/bg.jpeg');
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+}
+.Home .homeContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.Home .homeContent h1,
+.Home .homeContent p{
+    font-style: italic;
+    color: white;
+    font-size: 2em;
+}
+
+.Home .homeContent h1{
+    font-size: 4em;
+}
+.Home .exploreBtn{
+    padding: 15px 25px;
+    background-color: rgb(29, 155, 155);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.Home .exploreBtn:hover{
+    background-color: rgb(255, 70, 70);
+    transition: 0.3s ease;
+}
+                                    /* Rooms */
+.rooms .section1{
+    background-image: url("../imgs/roomBg.jpeg");
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rooms .section1 h2{
+    color: white;
+    font-size: 2em;
+}
+.rooms .section1 .text{
+    background-color: rgba(0, 0, 0, 0.582);
+    padding-top: 30px;
+    width: 300px;
+    height: 170px;
+    text-align: center;
+    border-radius: 20px;
+}
+.rooms .section1 .text button{
+    padding: 10px 20px;
+    background-color: rgb(29, 155, 155);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.rooms .section1 .text button:hover{
+    background-color: rgb(255, 70, 70);
+}
+                                                /* section2 */
+.section2{
+    min-height: 50vh;
+}
+.rooms .section2 .search{
+    padding: 20px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.rooms .section2 .search .box{
+    width: 200px;
+    
+}
+.rooms .section2 .search .box .searchBtn{
+    margin-top: 20px;
+    padding: 5px;
+    background-color: black;
+    width: 200px;
+    color: white;
+    border: none;
+}
+.rooms .section2 .content button{
+    margin-top: 20px;
+    padding: 5px;
+    background-color: black;
+    width: 120px;
+    color: white;
+    border: none;
+}
+                                    /* Countries */
+.countries{
+    padding: 50px;
+    background: rgba(247, 247, 247, 0.829);
+}
+                            /* .countries checkAvailability */
+.countries .checkAvailability{
+    background-color: rgb(12, 12, 59);
+    height: 190px;
+    color: white;
+    margin: 0 15px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.countries .checkAvailability .datePicker{
+    cursor: pointer;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+}
+.countries .checkAvailability .availableBtn{
+    font-size: 0.8em;
+    width: 100%;
+    border-radius: 20px;
+}
+.countries .checkAvailability p{
+    font-size: 0.9em;
+    font-weight: 700;
+    padding-right: 20px;
+    line-height: 22px;
+}
+                                    /* .countries cancelation */
+.countries .cancelation{
+    height: 200px;
+    margin: 30px 15px;
+    padding: 20px;
+    border: 1px solid rgb(206, 205, 205);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.countries .cancelation span{
+    color: #636779;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 4px;
+}
+
+                                    /* .countries search */
+.countries .searchBox{
+    margin: 10px 0;
+    max-width: 240px;
+    height: 40px;
+    border: 1.5px solid rgb(179, 174, 174);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.countries .searchBox input{
+    min-width: 180px;
+    height: 40px;
+    border:  none;
+    outline: none;
+    background: transparent;
+}
+.countries .searchBox span{
+    cursor: pointer;
+    background-color: rgb(52, 50, 163);
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.countries .accordian{
+    display: flex;
+    justify-content: end;
+}
+.countries .card{
+    box-shadow: 1px 1px 1px 2px #ccc;
+    margin: 10px;
+    min-height: 120px;
+    border-radius: 3px;
+}
+.countries .card:hover{
+    cursor: pointer;
+    box-shadow: 2px 3px 10px 5px #ccc;
+}
+
+                                    /* Countries Search box */
+
+.countries .card .text{
+    font-size: 1em;
+    font-weight: 600;
+}
+.countries .card .title{
+    font-size: 0.9em;
+    background: #e35252;
+    color: white;
+    max-width: 35%;
+    padding: 2px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+.countries .card .facilities{
+    font-size: 0.8em;
+}
+                                        /* Countries card  */
+.countries .card .img{
+    height: 100%;
+}
+@media screen and (max-width: 600px){
+    .countries .card .imgGrid{
+        height: 130px;
+        width: 100%;
+    }
+    .countries .card .text{
+        font-size: 0.7em;
+    }
+    .countries .card .title{
+        font-size: 0.6em;
+    }
+    .countries .card .facilities{
+        font-size: 0.7em;
+    }
+}
+@media screen and (max-width: 1198px){
+    .countries{
+        padding: 10px;
+    }
+}
