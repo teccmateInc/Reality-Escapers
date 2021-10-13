@@ -21,7 +21,7 @@ import {
   low_to_high,
   high_to_low,
   rating,
-  recommend,
+  clearSearch,
 } from "../redux/reducers/reducer";
 
 const Countries = () => {
@@ -50,9 +50,9 @@ const Countries = () => {
     } else if (value == "Ratings") {
       setEmpty("");
       dispatch(rating());
-    } else if (value == "Recommend") {
+    } else if (value == "Clear Search") {
       setEmpty("");
-      dispatch(recommend());
+      dispatch(clearSearch());
     }
   };
 
@@ -107,6 +107,9 @@ const Countries = () => {
               activity starts for a full refund.
             </span>
           </Grid>
+          <Grid className="sideMenu">
+
+          </Grid>
         </Grid>
         <Grid
           container
@@ -141,7 +144,6 @@ const Countries = () => {
                   label="Sort By"
                   onChange={handleSort}
                 >
-                  <MenuItem value={"Recommend"}>Recommend</MenuItem>
                   <MenuItem value={"Price Low to High"}>
                     Price Low to High
                   </MenuItem>
@@ -149,6 +151,7 @@ const Countries = () => {
                     Price High to Low
                   </MenuItem>
                   <MenuItem value={"Ratings"}>Ratings</MenuItem>
+                  <MenuItem value={"Clear Search"}>Clear Search</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
