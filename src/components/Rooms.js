@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+import { Grid,Typography,CardMedia,CardContent } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { Startdate, Enddate } from "../helper/meta";
@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const Rooms = () => {
   const history = useHistory();
-  const [adult, setAdult] = useState(1);
   const rooms = useSelector((state) => state.rooms);
   const handleClick = () => {
     history.push("/");
@@ -16,68 +15,92 @@ const Rooms = () => {
   // console.log(images)
   return (
     <div className="rooms">
-      <div className="container-fluid section1">
+      <Grid container xs={12} className="section1">
         <div className="text">
           <h2>Our Rooms</h2>
           <button onClick={handleClick}>Return Home </button>
         </div>
-      </div>
-      <div className="container section2 px-md-5 px-3">
-        <div className="row topText pt-5">
-          <h3>Our Rooms</h3>
-        </div>
-        <div className="row search mb-5">
-          <div className="col-2 box">
+      </Grid>
+      <Grid container sx={{padding:"0 20px"}} className="section2">
+        <Grid sx={{padding:"30px 0"}} container xs={12} className="topText pt-5">
+          <h2>Our Rooms</h2>
+        </Grid>
+        <Grid sx={{marginBottom:"20px"}} container className="search">
+          <Grid xs={12} sm={6} md={3} className="box" >
             <span>Check-In</span>
-            <Startdate />
-          </div>
-          <div className="col-2 box">
+            <Startdate className="roomInput"/>
+          </Grid>
+          <Grid xs={12} sm={6} md={3} className="box" display="flex" flexDirection="column">
             <span>Check-Out</span>
-            <Enddate />
-          </div>
-          <div className="col-2 box">
+            <Enddate className="roomInput"/>
+          </Grid>
+          <Grid xs={12} sm={6} md={3} className="box" display="flex" flexDirection="column">
             <span>Adult</span>
             <input
+              className="roomInput"
               type="number"
-              value={adult}
+              placeholder="Adult"
               onChange={(e) => {
                 console.log(e.target);
               }}
             />
-          </div>
-          <div className="col-2 box">
+          </Grid>
+          <Grid xs={12} sm={6} md={3} className="box" display="flex" flexDirection="column">
             <span>Kids</span>
-            <input type="number" placeholder="Kids" />
-          </div>
-          <div className="col-2 box">
+            <input className="roomInput" type="number" placeholder="Kids"/>
+          </Grid>
+          <Grid xs={3} className="box" display="flex" flexDirection="column">
             <button className="searchBtn">Search</button>
-          </div>
-        </div>
+          </Grid>
+        </Grid>
           {rooms.map((value, index) => (
-            <div className="row py-3 content" key={index}>
-              <div className="col-md-3">
+            <Grid container xs={12} className="content" key={index}>
+              <Grid className="imgGrid"
+               xs={12} sm={3}>
                 <Link to={`/rooms/${value.id}`}>
-                    <img style={{cursor:'pointer'}} className="img-fluid" src={value.imgSrc}/>
+                  <CardMedia
+                    className="img"
+                    component="img"
+                    alt={value.title}
+                    image={value.imgSrc}
+                  />
+                    {/* <img style={{cursor:'pointer'}} width="100%" height="100%" src={value.imgSrc}/> */}
                 </Link>
-              </div>
-              <div className="col-md-7">
-                <h4>{value.title}</h4>
-                <span>{value.text}</span>
-                <ul>
-                  <li>{value.size}</li>
-                  <li>{value.bed}</li>
-                </ul>
-              </div>
-              <div className="col-md-2">
-                <span>From</span>
-                <h4>${value.price}</h4>
-                <Link to={`/rooms/${value.id}`}>
-                    <button>More Info</button>
-                </Link>
-              </div>
-            </div>
+              </Grid>
+              <Grid container xs={8} sm={5}>
+              <CardContent>
+                <Typography className="title" variant="h6">
+                      {value.title}
+                </Typography>
+                  <Typography className="text" variant="h6">
+                      {value.text}
+                  </Typography>
+                  <Typography className="facilities" variant="h6">
+                      {value.size}
+                  </Typography>
+                  <Typography className="facilities" variant="h6">
+                      {value.bed}
+                  </Typography>
+                </CardContent>
+              </Grid>
+              <Grid container xs={3} sm={4}>
+              <CardContent sx={{textAlign:"end",marginLeft:"auto"}}>
+                    <Typography className="from" variant="h6">
+                        From
+                    </Typography>
+                    <Typography className="price">
+                        ${value.price}
+                    </Typography>
+                    <Link to={`/rooms/${value.id}`}>
+                      <Typography variant="button">
+                          <button>More Info</button>
+                      </Typography>
+                    </Link>
+                </CardContent>
+              </Grid>
+            </Grid>
           ))}
-      </div>
+      </Grid>
     </div>
   );
 };

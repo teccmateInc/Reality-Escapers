@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "react-datepicker";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { MdFreeCancellation } from "react-icons/md";
-
+import CustomizedAccordions from "./countryDropDown";
 import {
   CardContent,
   CardMedia,
@@ -21,7 +21,7 @@ import {
   low_to_high,
   high_to_low,
   rating,
-  recommend,
+  clearSearch,
 } from "../redux/reducers/reducer";
 
 const Countries = () => {
@@ -50,9 +50,9 @@ const Countries = () => {
     } else if (value == "Ratings") {
       setEmpty("");
       dispatch(rating());
-    } else if (value == "Recommend") {
+    } else if (value == "Clear Search") {
       setEmpty("");
-      dispatch(recommend());
+      dispatch(clearSearch());
     }
   };
 
@@ -85,7 +85,7 @@ const Countries = () => {
   return (
     <div className="countries">
       <Grid container>
-        <Grid sx={{maxHeight:"400px"}} container xs={12} lg={3}>
+        <Grid sx={{maxHeight:"400px",marginBottom:"50px"}} container xs={12} lg={3}>
           <Grid container className="checkAvailability">
             <p>Enter your dates to find available activities</p>
             <DatePicker
@@ -106,6 +106,9 @@ const Countries = () => {
               Change of plans? No problem. Cancel up to 24 hours before your
               activity starts for a full refund.
             </span>
+          </Grid>
+          <Grid sx={{minHeight:"200px"}} className="sideMenu">
+              <CustomizedAccordions/>
           </Grid>
         </Grid>
         <Grid
@@ -141,7 +144,6 @@ const Countries = () => {
                   label="Sort By"
                   onChange={handleSort}
                 >
-                  <MenuItem value={"Recommend"}>Recommend</MenuItem>
                   <MenuItem value={"Price Low to High"}>
                     Price Low to High
                   </MenuItem>
@@ -149,6 +151,7 @@ const Countries = () => {
                     Price High to Low
                   </MenuItem>
                   <MenuItem value={"Ratings"}>Ratings</MenuItem>
+                  <MenuItem value={"Clear Search"}>Clear Search</MenuItem>
                 </Select>
               </FormControl>
             </Grid>

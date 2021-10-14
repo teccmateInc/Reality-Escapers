@@ -103,13 +103,23 @@
     font-family: sans-serif;
     font-weight: 600;
     margin-top: 10px;
+    cursor: pointer;
 }
 .rooms .section1 .text button:hover{
     background-color: rgb(255, 70, 70);
 }
                                                 /* section2 */
-.section2{
+.rooms .section2{
     min-height: 50vh;
+}
+.rooms .section2 .content{
+    margin: 10px 20px;
+    box-shadow: 1px 1px 5px 2px #ccc;
+    cursor: pointer;
+    min-height: 100px;
+}
+.rooms .section2 .content:hover{
+    box-shadow: 2px 2px 10px 3px #ccc;
 }
 .rooms .section2 .search{
     padding: 20px;
@@ -117,16 +127,30 @@
     border-bottom: 1px solid black;
 }
 .rooms .section2 .search .box{
-    width: 200px;
-    
+    min-height: 40px;
+}
+.rooms .section2 .search .box .roomInput{
+    width: 165px;
+    min-height: 20px;
 }
 .rooms .section2 .search .box .searchBtn{
     margin-top: 20px;
     padding: 5px;
     background-color: black;
-    width: 200px;
+    width: 165px;
     color: white;
     border: none;
+}
+.rooms .section2 .content .title{
+    font-size: 1.75em;
+    font-weight: 600;
+}
+.rooms .section2 .content .text{
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.rooms .section2 .content .facilities{
+    font-size: 0.8em;
 }
 .rooms .section2 .content button{
     margin-top: 20px;
@@ -136,10 +160,70 @@
     color: white;
     border: none;
 }
+.rooms .section2 .content .img{
+    min-height: 100%;
+
+}
+@media screen and (max-width: 899px){
+    .rooms .search .box{
+        margin: 5px 0;
+    }
+    
+    .rooms .section2 .search .box .roomInput{
+        width: 165px;
+        margin-top: 6px;
+        min-height: 20px;
+    }
+}
+@media screen and (max-width: 840px){
+    .rooms .search .box{
+        margin: 5px 0;
+    }
+    .rooms .section2 .search .box .roomInput{
+        width: 165px;
+        margin-top: 6px;
+        min-height: 20px;
+    }
+    .rooms .section2 .content{
+        margin: 10px;
+    }
+    .rooms .section2 .content .imgGrid{
+        height: 130px;
+        width: 100%;
+    }
+    .rooms .section2 .content .title{
+        font-size: 1em;
+    }
+    .rooms .section2 .content .text{
+        font-size: 0.65em;
+    }
+    .rooms .section2 .content .facilities{
+        font-size: 0.59em;
+    }
+    .rooms .section2 .content .from{
+        font-size: 0.9em;
+    }
+    .rooms .section2 .content .price{
+        font-size: 0.85em;
+    }
+    .rooms .section2 .content button{
+        margin-top: 15px;
+        padding: 3px;
+        width: 70px;
+        font-size: 0.85em;
+    }
+}
+.rooms .section2 .content .img{
+    max-height: 120px;
+}
+@media screen and (max-width: 840px){
+    .rooms .section2 .content .img{
+        max-height: 120px;
+    }
+}
                                     /* Countries */
 .countries{
     padding: 50px;
-    background: rgba(247, 247, 247, 0.829);
 }
                             /* .countries checkAvailability */
 .countries .checkAvailability{
@@ -188,7 +272,16 @@
     line-height: 20px;
     margin-top: 4px;
 }
-
+                                    /* .countries sideMenu */
+.countries .sideMenu{
+    margin: 0 15px;
+    width: 100%;
+}
+@media screen and (max-width:1199px) {
+    .countries .cancelation{
+        display: none;
+    }
+}
                                     /* .countries search */
 .countries .searchBox{
     margin: 10px 0;
@@ -222,22 +315,18 @@
     justify-content: end;
 }
 .countries .card{
-    box-shadow: 1px 1px 1px 2px #ccc;
+    box-shadow: 1px 1px 10px 2px #ccc;
     margin: 10px;
     min-height: 120px;
     border-radius: 3px;
 }
 .countries .card:hover{
     cursor: pointer;
-    box-shadow: 2px 3px 10px 5px #ccc;
+    box-shadow: 2px 3px 10px 6px #ccc;
 }
 
                                     /* Countries Search box */
 
-.countries .card .text{
-    font-size: 1em;
-    font-weight: 600;
-}
 .countries .card .title{
     font-size: 0.9em;
     background: #e35252;
@@ -247,12 +336,17 @@
     border-radius: 5px;
     text-align: center;
 }
+.countries .card .text{
+    font-size: 1em;
+    font-weight: 600;
+}
 .countries .card .facilities{
     font-size: 0.8em;
 }
                                         /* Countries card  */
 .countries .card .img{
     height: 100%;
+    border-radius: 3px 0 0 3px;
 }
 @media screen and (max-width: 600px){
     .countries .card .imgGrid{
