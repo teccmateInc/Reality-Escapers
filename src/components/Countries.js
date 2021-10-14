@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import DatePicker from "react-datepicker";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { MdFreeCancellation } from "react-icons/md";
-
+import CustomizedAccordions from "./countryDropDown";
 import {
   CardContent,
   CardMedia,
@@ -85,7 +85,7 @@ const Countries = () => {
   return (
     <div className="countries">
       <Grid container>
-        <Grid sx={{maxHeight:"400px"}} container xs={12} lg={3}>
+        <Grid sx={{maxHeight:"400px",marginBottom:"50px"}} container xs={12} lg={3}>
           <Grid container className="checkAvailability">
             <p>Enter your dates to find available activities</p>
             <DatePicker
@@ -107,8 +107,8 @@ const Countries = () => {
               activity starts for a full refund.
             </span>
           </Grid>
-          <Grid className="sideMenu">
-
+          <Grid sx={{minHeight:"200px"}} className="sideMenu">
+              <CustomizedAccordions/>
           </Grid>
         </Grid>
         <Grid

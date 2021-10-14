@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const Rooms = () => {
   const history = useHistory();
-  const [adult, setAdult] = useState(1);
   const rooms = useSelector((state) => state.rooms);
   const handleClick = () => {
     history.push("/");
@@ -27,7 +26,7 @@ const Rooms = () => {
           <h2>Our Rooms</h2>
         </Grid>
         <Grid sx={{marginBottom:"20px"}} container className="search">
-          <Grid xs={12} sm={6} md={3} className="box" display="flex" flexDirection="column">
+          <Grid xs={12} sm={6} md={3} className="box" >
             <span>Check-In</span>
             <Startdate className="roomInput"/>
           </Grid>
@@ -40,7 +39,7 @@ const Rooms = () => {
             <input
               className="roomInput"
               type="number"
-              value={adult}
+              placeholder="Adult"
               onChange={(e) => {
                 console.log(e.target);
               }}
@@ -48,7 +47,7 @@ const Rooms = () => {
           </Grid>
           <Grid xs={12} sm={6} md={3} className="box" display="flex" flexDirection="column">
             <span>Kids</span>
-            <input className="roomInput" type="number" placeholder="Kids" />
+            <input className="roomInput" type="number" placeholder="Kids"/>
           </Grid>
           <Grid xs={3} className="box" display="flex" flexDirection="column">
             <button className="searchBtn">Search</button>
@@ -68,7 +67,7 @@ const Rooms = () => {
                     {/* <img style={{cursor:'pointer'}} width="100%" height="100%" src={value.imgSrc}/> */}
                 </Link>
               </Grid>
-              <Grid container sx={{padding:"5px"}} xs={8} sm={5}>
+              <Grid container xs={8} sm={5}>
               <CardContent>
                 <Typography className="title" variant="h6">
                       {value.title}
