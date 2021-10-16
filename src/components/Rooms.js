@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { Grid,Typography,CardMedia,CardContent } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
-import { Startdate, Enddate } from "../helper/meta";
+import { InputDate } from "../helper/meta";
 import { Link } from 'react-router-dom';
-
 const Rooms = () => {
   const history = useHistory();
   const rooms = useSelector((state) => state.rooms);
@@ -21,18 +20,18 @@ const Rooms = () => {
           <button onClick={handleClick}>Return Home </button>
         </div>
       </Grid>
-      <Grid container sx={{padding:"0 20px"}} className="section2">
-        <Grid sx={{padding:"30px 0"}} container xs={12} className="topText pt-5">
+      <Grid container className="section2">
+        <Grid sx={{padding:"30px 0"}} container xs={12}>
           <h2>Our Rooms</h2>
         </Grid>
         <Grid sx={{marginBottom:"20px"}} container className="search">
           <Grid xs={12} sm={6} md={3} className="box" >
             <span>Check-In</span>
-            <Startdate className="roomInput"/>
+            <InputDate className="roomInput" placeholder={"Check In"}/>
           </Grid>
           <Grid xs={12} sm={6} md={3} className="box" display="flex" flexDirection="column">
             <span>Check-Out</span>
-            <Enddate className="roomInput"/>
+            <InputDate className="roomInput" placeholder={"Check Out"}/>
           </Grid>
           <Grid xs={12} sm={6} md={3} className="box" display="flex" flexDirection="column">
             <span>Adult</span>
@@ -64,7 +63,7 @@ const Rooms = () => {
                     alt={value.title}
                     image={value.imgSrc}
                   />
-                    {/* <img style={{cursor:'pointer'}} width="100%" height="100%" src={value.imgSrc}/> */}
+                  <button className="InfoBtn">More Info</button>
                 </Link>
               </Grid>
               <Grid container xs={8} sm={5}>

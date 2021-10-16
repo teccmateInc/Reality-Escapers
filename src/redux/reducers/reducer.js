@@ -77,7 +77,7 @@ const initialState = {
     },
     {
       id: 2,
-      title: "Standard Room",
+      title: "Executive Suite",
       text: "Our Standard Rooms are the perfect combination of function and comfort.",
       size: " Size: 260 sq ft",
       bed: " Beds: 2 Double(s",
@@ -86,7 +86,7 @@ const initialState = {
     },
     {
       id: 3,
-      title: "Superior Room",
+      title: "Presidential Room",
       text: "Our Superior Rooms are comfortable, roomy and elegant.",
       size: " Size: 280 sq ft",
       bed: " Beds: 1 King(s)",

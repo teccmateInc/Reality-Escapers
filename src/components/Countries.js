@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import DatePicker from "react-datepicker";
+import { InputDate } from "../helper/meta";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { MdFreeCancellation } from "react-icons/md";
 import CustomizedAccordions from "./countryDropDown";
@@ -85,16 +85,10 @@ const Countries = () => {
   return (
     <div className="countries">
       <Grid container>
-        <Grid sx={{maxHeight:"400px",marginBottom:"50px"}} container xs={12} lg={3}>
+        <Grid sx={{marginBottom:"50px"}} className="sideBar" container xs={12} lg={3}>
           <Grid container className="checkAvailability">
             <p>Enter your dates to find available activities</p>
-            <DatePicker
-              className="datePicker"
-              selected={selectDate}
-              onChange={(date) => setSelectDate(date)}
-              disabledKeyboardNavigation
-              placeholderText={date}
-            />
+            <InputDate className='datepicker' placeholder={"Check Availability"}/>
             <Button variant="contained" className="availableBtn">
               Check Availability
             </Button>

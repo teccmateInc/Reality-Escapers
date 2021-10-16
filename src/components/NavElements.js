@@ -27,7 +27,8 @@ cursor: pointer;
 `
 export const H2 = styled.h2`
 &:hover{
-    color: #3580db
+    color: #3580db;
+    text-decoration: 2px underline;
 }
 `
 export const Bars = styled(FaBars)`

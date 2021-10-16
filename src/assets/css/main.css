@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
 @media screen and (max-width : 850px){
     .Navbar .navMenu{
         display: none;
@@ -111,12 +110,14 @@
                                                 /* section2 */
 .rooms .section2{
     min-height: 50vh;
+    padding: 0 20px;
 }
 .rooms .section2 .content{
     margin: 10px 20px;
     box-shadow: 1px 1px 5px 2px #ccc;
     cursor: pointer;
     min-height: 100px;
+    overflow: hidden;
 }
 .rooms .section2 .content:hover{
     box-shadow: 2px 2px 10px 3px #ccc;
@@ -135,11 +136,13 @@
 }
 .rooms .section2 .search .box .searchBtn{
     margin-top: 20px;
-    padding: 5px;
     background-color: black;
-    width: 165px;
     color: white;
     border: none;
+    width: 193px;
+    height: 35px;
+    padding: 10px;
+    cursor: pointer;
 }
 .rooms .section2 .content .title{
     font-size: 1.75em;
@@ -163,6 +166,13 @@
 .rooms .section2 .content .img{
     min-height: 100%;
 
+}
+.rooms .section2 .search .box .roomInput{
+  width: 193px !important;
+  height: 35px !important;
+  padding: 10px !important;
+  margin-top: 10px !important;
+  cursor: pointer;
 }
 @media screen and (max-width: 899px){
     .rooms .search .box{
@@ -213,8 +223,35 @@
         font-size: 0.85em;
     }
 }
+.rooms .section2 .content .imgGrid{
+    position: relative;
+    overflow: hidden;
+}
 .rooms .section2 .content .img{
     max-height: 120px;
+    transition: 0.4s ease;
+}
+.rooms .section2 .content .imgGrid:hover img{
+    transform: scale(1.2);
+}
+.rooms .section2 .imgGrid .InfoBtn{
+    position: absolute;
+    background-color: black;
+    bottom: 0;
+    left: 50%;
+    height: 30px;
+    width: 90px;
+    opacity: 0;
+    transition: 0.5s ease;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    cursor: pointer;
+}
+.rooms .section2 .content img:hover + .InfoBtn,
+.rooms .section2 .content .InfoBtn:hover{
+    bottom: 50%;
+    transform: translate(-50%,50%);
+    opacity: 1;
 }
 @media screen and (max-width: 840px){
     .rooms .section2 .content .img{
@@ -234,7 +271,7 @@
     padding: 20px;
     border-radius: 5px;
 }
-.countries .checkAvailability .datePicker{
+.countries .checkAvailability .datepicker{
     cursor: pointer;
     margin: 15px 0;
     padding: 10px;
@@ -348,6 +385,9 @@
     height: 100%;
     border-radius: 3px 0 0 3px;
 }
+.countries .sideBar{
+    max-height: 400px;
+}
 @media screen and (max-width: 600px){
     .countries .card .imgGrid{
         height: 130px;
@@ -367,4 +407,68 @@
     .countries{
         padding: 10px;
     }
+    .countries .sideBar{
+        max-height: 1000px;
+    }
 }
+
+                                    /* Footer Start */
+.Footer{
+    background-color: #1a2b49;
+    min-height: 50px;
+    width: 100%;
+    padding: 20px 70px;
+}
+                                    /* Footer Segment1 start*/
+.Footer .segment1{
+    padding: 0 10px;
+    height: 100%;
+}
+.Footer .typography{
+    color: white;
+    font-weight: 600;
+    padding-top: 20px;
+}
+.Footer .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+    width: 300px;
+}
+.Footer .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select{
+    background: white;
+    padding: 10px;
+    border-radius: 0;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+                                    /* Footer Segment1 end*/
+
+                                    /* Footer Segment2 start*/
+
+.Footer .segment2{
+    padding: 0 10px;
+    height: 100%;
+}
+                                        /* Footer Section1*/
+.Footer .segment2 .section1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Footer .segment2 .section1 img{
+    height: 40px;
+    width: 130px;
+    margin: 10px 0;
+}
+.Footer .segment2 .section2 .list,
+.Footer .segment2 .section3 .list,
+.Footer .segment2 .section4 .list{
+    font-size: 0.9em;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+}
+.Footer .segment2 .section2 .list:hover,
+.Footer .segment2 .section3 .list:hover,
+.Footer .segment2 .section4 .list:hover{
+    text-decoration: underline;
+}
+                                    /* Footer Segment2 end*/

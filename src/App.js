@@ -8,7 +8,7 @@ import Rooms from './components/Rooms';
 import Collage from './components/Collage';
 import RoomsDetails from './components/RoomsDetails';
 import Countries from './components/Countries';
-
+import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
@@ -23,6 +23,7 @@ function App() {
                 <Route exact path='/countries' component={Countries}/>
                 <Route>404 not found</Route>
             </Switch>
+          <Footer/>
       </BrowserRouter>
     </div>
   );
