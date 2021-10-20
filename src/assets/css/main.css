@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
 @media screen and (max-width : 850px){
     .Navbar .navMenu{
         display: none;
@@ -103,13 +102,25 @@
     font-family: sans-serif;
     font-weight: 600;
     margin-top: 10px;
+    cursor: pointer;
 }
 .rooms .section1 .text button:hover{
     background-color: rgb(255, 70, 70);
 }
                                                 /* section2 */
-.section2{
+.rooms .section2{
     min-height: 50vh;
+    padding: 0 20px;
+}
+.rooms .section2 .content{
+    margin: 10px 20px;
+    box-shadow: 1px 1px 5px 2px #ccc;
+    cursor: pointer;
+    min-height: 100px;
+    overflow: hidden;
+}
+.rooms .section2 .content:hover{
+    box-shadow: 2px 2px 10px 3px #ccc;
 }
 .rooms .section2 .search{
     padding: 20px;
@@ -117,16 +128,32 @@
     border-bottom: 1px solid black;
 }
 .rooms .section2 .search .box{
-    width: 200px;
-    
+    min-height: 40px;
+}
+.rooms .section2 .search .box .roomInput{
+    width: 165px;
+    min-height: 20px;
 }
 .rooms .section2 .search .box .searchBtn{
     margin-top: 20px;
-    padding: 5px;
     background-color: black;
-    width: 200px;
     color: white;
     border: none;
+    width: 193px;
+    height: 35px;
+    padding: 10px;
+    cursor: pointer;
+}
+.rooms .section2 .content .title{
+    font-size: 1.75em;
+    font-weight: 600;
+}
+.rooms .section2 .content .text{
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.rooms .section2 .content .facilities{
+    font-size: 0.8em;
 }
 .rooms .section2 .content button{
     margin-top: 20px;
@@ -136,10 +163,104 @@
     color: white;
     border: none;
 }
+.rooms .section2 .content .img{
+    min-height: 100%;
+
+}
+.rooms .section2 .search .box .roomInput{
+  width: 193px !important;
+  height: 35px !important;
+  padding: 10px !important;
+  margin-top: 10px !important;
+  cursor: pointer;
+}
+@media screen and (max-width: 899px){
+    .rooms .search .box{
+        margin: 5px 0;
+    }
+    
+    .rooms .section2 .search .box .roomInput{
+        width: 165px;
+        margin-top: 6px;
+        min-height: 20px;
+    }
+}
+@media screen and (max-width: 840px){
+    .rooms .search .box{
+        margin: 5px 0;
+    }
+    .rooms .section2 .search .box .roomInput{
+        width: 165px;
+        margin-top: 6px;
+        min-height: 20px;
+    }
+    .rooms .section2 .content{
+        margin: 10px;
+    }
+    .rooms .section2 .content .imgGrid{
+        height: 130px;
+        width: 100%;
+    }
+    .rooms .section2 .content .title{
+        font-size: 1em;
+    }
+    .rooms .section2 .content .text{
+        font-size: 0.65em;
+    }
+    .rooms .section2 .content .facilities{
+        font-size: 0.59em;
+    }
+    .rooms .section2 .content .from{
+        font-size: 0.9em;
+    }
+    .rooms .section2 .content .price{
+        font-size: 0.85em;
+    }
+    .rooms .section2 .content button{
+        margin-top: 15px;
+        padding: 3px;
+        width: 70px;
+        font-size: 0.85em;
+    }
+}
+.rooms .section2 .content .imgGrid{
+    position: relative;
+    overflow: hidden;
+}
+.rooms .section2 .content .img{
+    max-height: 120px;
+    transition: 0.4s ease;
+}
+.rooms .section2 .content .imgGrid:hover img{
+    transform: scale(1.2);
+}
+.rooms .section2 .imgGrid .InfoBtn{
+    position: absolute;
+    background-color: black;
+    bottom: 0;
+    left: 50%;
+    height: 30px;
+    width: 90px;
+    opacity: 0;
+    transition: 0.5s ease;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    cursor: pointer;
+}
+.rooms .section2 .content img:hover + .InfoBtn,
+.rooms .section2 .content .InfoBtn:hover{
+    bottom: 50%;
+    transform: translate(-50%,50%);
+    opacity: 1;
+}
+@media screen and (max-width: 840px){
+    .rooms .section2 .content .img{
+        max-height: 120px;
+    }
+}
                                     /* Countries */
 .countries{
     padding: 50px;
-    background: rgba(247, 247, 247, 0.829);
 }
                             /* .countries checkAvailability */
 .countries .checkAvailability{
@@ -150,7 +271,7 @@
     padding: 20px;
     border-radius: 5px;
 }
-.countries .checkAvailability .datePicker{
+.countries .checkAvailability .datepicker{
     cursor: pointer;
     margin: 15px 0;
     padding: 10px;
@@ -188,7 +309,16 @@
     line-height: 20px;
     margin-top: 4px;
 }
-
+                                    /* .countries sideMenu */
+.countries .sideMenu{
+    margin: 0 15px;
+    width: 100%;
+}
+@media screen and (max-width:1199px) {
+    .countries .cancelation{
+        display: none;
+    }
+}
                                     /* .countries search */
 .countries .searchBox{
     margin: 10px 0;
@@ -222,22 +352,18 @@
     justify-content: end;
 }
 .countries .card{
-    box-shadow: 1px 1px 1px 2px #ccc;
+    box-shadow: 1px 1px 10px 2px #ccc;
     margin: 10px;
     min-height: 120px;
     border-radius: 3px;
 }
 .countries .card:hover{
     cursor: pointer;
-    box-shadow: 2px 3px 10px 5px #ccc;
+    box-shadow: 2px 3px 10px 6px #ccc;
 }
 
                                     /* Countries Search box */
 
-.countries .card .text{
-    font-size: 1em;
-    font-weight: 600;
-}
 .countries .card .title{
     font-size: 0.9em;
     background: #e35252;
@@ -247,12 +373,20 @@
     border-radius: 5px;
     text-align: center;
 }
+.countries .card .text{
+    font-size: 1em;
+    font-weight: 600;
+}
 .countries .card .facilities{
     font-size: 0.8em;
 }
                                         /* Countries card  */
 .countries .card .img{
     height: 100%;
+    border-radius: 3px 0 0 3px;
+}
+.countries .sideBar{
+    max-height: 400px;
 }
 @media screen and (max-width: 600px){
     .countries .card .imgGrid{
@@ -272,5 +406,116 @@
 @media screen and (max-width: 1198px){
     .countries{
         padding: 10px;
+    }
+    .countries .sideBar{
+        max-height: 1000px;
+    }
+}
+
+                                    /* Footer Start */
+.Footer{
+    background-color: #1a2b49;
+    min-height: 50px;
+    width: 100%;
+    padding: 50px 30px 0 30px;
+}
+.Footer .section1{
+    max-height: 300px;
+    margin-bottom: 20px;
+}
+.Footer .section2{
+    max-height: 200px;
+    margin-bottom: 20px;
+}
+.Footer .section3{
+    max-height: 200px;
+    margin-bottom: 20px;
+}
+.Footer .section4{
+    max-height: 200px;
+}
+.Footer .section5{
+    max-height: 400px;
+}
+.Footer .typography{
+    color: white;
+    font-weight: 800;
+    width: 100%;
+}
+.Footer .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+    width: 250px;
+}
+.Footer .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select{
+    background: white;
+    padding: 10px;
+    border-radius: 0;
+    font-weight: 600;
+    font-family: sans-serif;
+}   
+.Footer .section2 .img{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.Footer .section2 img{
+    height: 40px;
+    width: auto;
+    margin: 5px 0;
+}
+.Footer .section3 .list,
+.Footer .section4 .list,
+.Footer .section5 .list{
+    font-size: 0.9em;
+    color: white;
+    width: 100%;
+    line-height: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.Footer .section3 .list:hover,
+.Footer .section4 .list:hover,
+.Footer .section5 .list:hover{
+    text-decoration: underline;
+    color: rgb(168, 164, 164);
+}
+.Footer .section5 .payCards{
+    max-width: 300px;
+}
+.Footer .section5 .payCards .payCardImg{
+    height: auto;
+    width: 50px;
+}
+.Footer .section5 .icons{
+    padding: 20px 0;
+    max-width: 300px;
+} 
+.Footer .section5 .icons .iconsItems{
+    color: white;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.Footer .section5 .icons .iconsItems:hover{
+    color: rgb(168, 164, 164);
+}
+.Footer .section5 .text{
+    padding: 0 0 25px 0;
+}
+@media screen and (max-width: 900px){
+    .Footer .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+        padding: 10px 0;
+        width: 100%;
+    }
+    .Footer .section2 .img{
+        display: flex;
+        flex-direction: row;
+        padding: 20px 0;
+    }
+    .Footer .section2 img{
+        padding: 0 10px;
+        width: 150px;
+    }
+    .Footer .section5 .icons{
+        display: flex;
+        justify-content: center;
     }
 }
