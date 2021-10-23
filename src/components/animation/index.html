@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ReboundGen</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="animation.css">
+</head>
+
+<body>
+    <h3>Animations</h3>
+    <div class="animations-container">
+        <div class="example-container">
+            <div class="animation-example" data-anim="none"></div>
+            <span>None</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="drop"></div>
+            <span>Drop</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="fadeIn"></div>
+            <span>Fade In</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="fly-in-bottom"></div>
+            <span>Fly In-Bottom</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="fly-in-left"></div>
+            <span>Fly In-Left</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="fly-in-right"></div>
+            <span>Fly In-Right</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="fly-in-top"></div>
+            <span>Fly In-Top</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="pulse"></div>
+            <span>Pulse</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="rotate-in-left"></div>
+            <span>Rotate In-Left</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="rotate-in-right"></div>
+            <span>Rotate In-Right</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="twirl-in"></div>
+            <span>Twirl In</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="whoosh-in-left"></div>
+            <span>Whoosh In-Left</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="whoosh-in-right"></div>
+            <span>Whoosh In-Right</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="zoom-in"></div>
+            <span>Zoom In</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="zoom-out"></div>
+            <span>Zoom Out</span>
+        </div>
+    </div>
+    <br>
+    <h3>Kenburns</h3>
+    <div class="animations-container">
+        <div class="example-container">
+            <div class="animation-example" data-anim="pan-left"></div>
+            <span>Pan Left</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="pan-right"></div>
+            <span>Pan Right</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="pan-down"></div>
+            <span>Pan Down</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="pan-up"></div>
+            <span>Pan Up</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="zoom-in"></div>
+            <span>Zoom In</span>
+        </div>
+        <div class="example-container">
+            <div class="animation-example" data-anim="zoom-out"></div>
+            <span>Zoom Out</span>
+        </div>
+    </div>
+    </p>
+    </article>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+        $(".animation-example").on('mouseover', function() {
+            var anim = $(this).attr("data-anim");
+            $(this).removeClass(anim);
+            $(this).addClass(anim);
+
+            $(this).one('webkitAnimationEnd oanimationend MSAnimationEnd animationend',
+                function(e) {
+                    // code to execute after transition ends
+                    $(this).removeClass(anim);
+
+                });
+        });
+    });
+    </script>
+</body>
+
+</html>

@@ -1,24 +1,47 @@
 {
-  "name": "reality-escapers",
+  "name": "main",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@mui/material": "^5.0.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@reduxjs/toolkit": "^1.6.1",
+    "@splidejs/splide": "^2.4.21",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-datepicker": "^4.2.1",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
+    "antd": "^4.13.1",
+    "axios": "^0.21.1",
+    "emoji-mart": "^3.0.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react": "^17.0.1",
+    "react-animated-css": "^1.2.1",
+    "react-color-palette": "^3.1.0",
+    "react-dnd": "^14.0.2",
+    "react-dnd-html5-backend": "^14.0.0",
+    "react-dom": "^17.0.1",
+    "react-gcolor-picker": "^1.1.3",
+    "react-giphy-picker": "^1.1.1",
+    "react-giphy-searchbox": "^1.5.4",
+    "react-icons": "^4.2.0",
+    "react-id-generator": "^3.0.1",
+    "react-lazy-load": "^3.1.13",
+    "react-moveable": "^0.29.0",
+    "react-onclickoutside": "^6.11.2",
     "react-redux": "^7.2.5",
-    "react-router-dom": "^5.3.0",
+    "react-resizable": "^3.0.4",
+    "react-resizable-rotatable-draggable": "^0.2.0",
+    "react-responsive-masonry": "^2.1.2",
+    "react-rnd": "^10.3.4",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "styled-components": "^5.3.1",
-    "web-vitals": "^1.0.1"
+    "react-shapes": "^0.0.6",
+    "react-transition-group": "^4.4.2",
+    "redux-logger": "^3.0.6",
+    "styled-components": "^4.4.1",
+    "swiper": "^6.7.0",
+    "uuid": "^8.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,7 +53,13 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/exhaustive-deps": 0
+    }
   },
   "browserslist": {
     "production": [
@@ -43,5 +72,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
