@@ -1,22 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { DndProvider } from 'react-dnd'
-import { ModalProvider } from './providers/Modal'
-import { NotificationProvider } from './providers/Notification'
-import { HTML5Backend } from 'react-dnd-html5-backend'
-import { Provider } from 'react-redux'
-import App from './App'
-import store from './redux/store/store'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './redux/store'
 
 ReactDOM.render(
   <Provider store={store}>
-    <NotificationProvider>
-      <ModalProvider>
-        <DndProvider backend={HTML5Backend}>
-          <App />
-        </DndProvider>
-      </ModalProvider>
-    </NotificationProvider>
-  </Provider>,
+    <App />
+  </Provider>  
+,
   document.getElementById('root')
-)
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

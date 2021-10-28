@@ -16,6 +16,14 @@ const initialState = {
       from: "From",
       price: 12000,
       person: "2 persons",
+      images:[
+        "/assets/images/Italy.jpeg",
+        "/assets/images/Turkey.jpeg",
+        "/assets/images/London.jpeg",
+        "/assets/images/California.jpeg",
+        "/assets/images/Russian.jpeg",
+        "/assets/images/China.jpeg",
+      ]
     },
     {
       id: 2,
@@ -31,6 +39,14 @@ const initialState = {
       from: "From",
       price: 11000,
       person: "per person",
+      images:[
+        "/assets/images/Italy.jpeg",
+        "/assets/images/Turkey.jpeg",
+        "/assets/images/London.jpeg",
+        "/assets/images/California.jpeg",
+        "/assets/images/Russian.jpeg",
+        "/assets/images/China.jpeg",
+      ]
     },
     {
       id: 3,
@@ -47,6 +63,14 @@ const initialState = {
       from: "From",
       price: 10000,
       person: "per person",
+      images:[
+        "/assets/images/Italy.jpeg",
+        "/assets/images/Turkey.jpeg",
+        "/assets/images/London.jpeg",
+        "/assets/images/California.jpeg",
+        "/assets/images/Russian.jpeg",
+        "/assets/images/China.jpeg",
+      ]
     },
     {
       id: 4,
@@ -57,12 +81,21 @@ const initialState = {
         duration: "Duration: 1 hour",
         guide: "Optional audio guide",
       },
-      rating: 4.1,
+      rating: 4.9,
       reviews: "(1,229 reviews)",
       from: "From",
       price: 16000,
       person: "3 persons",
+      images:[
+        "/assets/images/Italy.jpeg",
+        "/assets/images/Turkey.jpeg",
+        "/assets/images/London.jpeg",
+        "/assets/images/California.jpeg",
+        "/assets/images/Russian.jpeg",
+        "/assets/images/China.jpeg",
+      ]
     },
+    
   ],
   rooms: [
     {
@@ -76,7 +109,7 @@ const initialState = {
     },
     {
       id: 2,
-      title: "Standard Room",
+      title: "Executive Suite",
       text: "Our Standard Rooms are the perfect combination of function and comfort.",
       size: " Size: 260 sq ft",
       bed: " Beds: 2 Double(s",
@@ -85,7 +118,7 @@ const initialState = {
     },
     {
       id: 3,
-      title: "Superior Room",
+      title: "Presidential Room",
       text: "Our Superior Rooms are comfortable, roomy and elegant.",
       size: " Size: 280 sq ft",
       bed: " Beds: 1 King(s)",
@@ -103,20 +136,20 @@ const initialState = {
   searchResults: [],
 };
 
-const reducers = createSlice({
+const filterSlice = createSlice({
   name: "action",
   initialState: initialState,
   reducers: {
     searchItems : (state,action) =>{
         const search = action.payload;
         const state_ = current(state);
-        let tempArr = state_.searchResults.length > 0 ? [...state_.searchResults] : [...state_.country];
+        let tempArr = [...state_.country];
         state.searchResults = tempArr.filter((oldVal) => {
             if (oldVal.text.toLowerCase().includes(search?.toLowerCase())) {
               return oldVal;
             }
           })
-        const length = state.searchResults.length;
+        console.log(state.searchResults)
     },
     low_to_high: (state, action) => {
       const state_ = current(state);
@@ -124,6 +157,7 @@ const reducers = createSlice({
       state.searchResults = tempArr.sort(function (a, b) {
         return a.price - b.price;
       });
+      console.log(state.searchResults)
     },
     high_to_low: (state, action) => {
       const state_ = current(state);
@@ -131,6 +165,7 @@ const reducers = createSlice({
       state.searchResults = tempArr.sort(function (a, b) {
         return b.price - a.price;
       });
+      console.log(state.searchResults)
     },
     rating: (state,action) =>{
         const state_ = current(state);
@@ -139,7 +174,7 @@ const reducers = createSlice({
             return b.rating - a.rating;
           });
     },
-    recommend : (state,action) =>{
+    clearSearch : (state,action) =>{
         const state_ = current(state);
         let tempArr = [...state_.country];
         state.searchResults = tempArr.map(value=>{return value})
@@ -148,5 +183,5 @@ const reducers = createSlice({
     }
   },
 });
-export const { searchItems,low_to_high, high_to_low,rating,recommend } = reducers.actions;
-export default reducers.reducer;
+export const { searchItems,low_to_high, high_to_low,rating,clearSearch } = filterSlice.actions;
+export default filterSlice.reducer;

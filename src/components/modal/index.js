@@ -1,59 +1,41 @@
-import React from 'react'
-import { Modal } from 'antd'
+import React from 'react';
+import { useSelector,useDispatch } from "react-redux";
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import { modalClose } from "../../redux/reducers/modalReducer";
+import Gallery from '../imgGallery';
+const style = {
+  position: 'relative',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: "70%",
+  maxHeight: '80vh',
+  boxShadow: 24,
+  bgcolor: 'black',
+  border: 'none',
+  outline: "none",
+};
 
-const ModalView = ({
-  title,
-  subText,
-  imageSrc,
-  open,
-  onClose,
-  okText,
-  cancelText,
-  centered,
-  onDlete,
-  okButtonProps,
-  cancelButtonProps,
-}) => {
-  //   const [isModalVisible, setIsModalVisible] = useState(open)
-
-  const handleOk = () => {
-    onDlete()
-  }
-
-  const handleCancel = () => {
-    onClose()
-  }
-
+const BasicModal = ()=> {
+    const dispatch = useDispatch();
+    const {isOpen} = useSelector((state) => state.modal);
+    const handleClose = () =>{
+        dispatch(modalClose())
+    }
   return (
-    <Modal
-      title={title}
-      visible={open}
-      onOk={handleOk}
-      onCancel={handleCancel}
-      okText={okText}
-      cancelText={cancelText}
-      centered={centered}
-      cancelButtonProps={cancelButtonProps}
-      okButtonProps={okButtonProps}
-    >
-      {imageSrc && <img src={imageSrc} />}
-      {subText && <p style={{ marginTop: '1.5rem' }}>{subText}</p>}
-    </Modal>
-  )
+    <div>
+      <Modal
+        open={isOpen}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+            <Gallery/>
+        </Box>
+      </Modal>
+    </div>
+  );
 }
-
-ModalView.defaultProps = {
-  title: 'Confirmation',
-  subText: '',
-  imageSrc: null,
-  open: true,
-  onClose: () => {},
-  okText: 'Close',
-  cancelText: 'Back',
-  centered: true,
-  onDlete: () => {},
-  okButtonProps: {},
-  cancelButtonProps: {},
-}
-
-export default ModalView
+export default BasicModal;

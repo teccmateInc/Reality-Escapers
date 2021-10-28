@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 
 const Home = () => {
   
-  const country = useSelector((state) => state.country);
+  const country = useSelector((state) => state.filterSlice.country);
   const history = useHistory();
   const handleClick = () => {
     history.push("/countries");
