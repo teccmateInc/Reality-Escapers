@@ -1,276 +1,705 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-
-@media screen and (max-width : 850px){
-    .Navbar .navMenu{
-        display: none;
-    }
-    .Navbar #hidden{
-        position: absolute;
-        left: 0;
-        top: 5em;
-        height: 230px;
-        width: 100%;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        z-index: 20;
-        transition: 1s ease;
-    }
-}
-@media screen and (min-width:851px){
-    .Navbar #hidden{
-        height: 0;
-        display: none;
-    }
-    .Navbar .navMenu{
-        display: flex;
-        align-items: center;
-        font-size: 0.7em;
-    }
-}
-
-                                                /* Home */
-.Home{
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../imgs/bg.jpeg');
-    background-position: center;
-    background-size: cover;
-    height: 90vh;
-    width: 100%;
-}
-.Home .homeContent{
+@media screen and (max-width: 850px) {
+  .Navbar .navMenu {
+    display: none;
+  }
+  .Navbar #hidden {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-.Home .homeContent h1,
-.Home .homeContent p{
-    font-style: italic;
-    color: white;
-    font-size: 2em;
-}
-
-.Home .homeContent h1{
-    font-size: 4em;
-}
-.Home .exploreBtn{
-    padding: 15px 25px;
-    background-color: rgb(29, 155, 155);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-family: sans-serif;
-    font-weight: 600;
-}
-.Home .exploreBtn:hover{
-    background-color: rgb(255, 70, 70);
-    transition: 0.3s ease;
-}
-                                    /* Rooms */
-.rooms .section1{
-    background-image: url("../imgs/roomBg.jpeg");
-    background-position: center;
-    background-size: cover;
-    height: 70vh;
+    left: 0;
+    top: 5em;
+    height: 230px;
     width: 100%;
+    background-color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    z-index: 20;
+    transition: 1s ease;
+  }
 }
-.rooms .section1 h2{
-    color: white;
-    font-size: 2em;
-}
-.rooms .section1 .text{
-    background-color: rgba(0, 0, 0, 0.582);
-    padding-top: 30px;
-    width: 300px;
-    height: 170px;
-    text-align: center;
-    border-radius: 20px;
-}
-.rooms .section1 .text button{
-    padding: 10px 20px;
-    background-color: rgb(29, 155, 155);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-family: sans-serif;
-    font-weight: 600;
-    margin-top: 10px;
-}
-.rooms .section1 .text button:hover{
-    background-color: rgb(255, 70, 70);
-}
-                                                /* section2 */
-.section2{
-    min-height: 50vh;
-}
-.rooms .section2 .search{
-    padding: 20px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-.rooms .section2 .search .box{
-    width: 200px;
-    
-}
-.rooms .section2 .search .box .searchBtn{
-    margin-top: 20px;
-    padding: 5px;
-    background-color: black;
-    width: 200px;
-    color: white;
-    border: none;
-}
-.rooms .section2 .content button{
-    margin-top: 20px;
-    padding: 5px;
-    background-color: black;
-    width: 120px;
-    color: white;
-    border: none;
-}
-                                    /* Countries */
-.countries{
-    padding: 50px;
-    background: rgba(247, 247, 247, 0.829);
-}
-                            /* .countries checkAvailability */
-.countries .checkAvailability{
-    background-color: rgb(12, 12, 59);
-    height: 190px;
-    color: white;
-    margin: 0 15px;
-    padding: 20px;
-    border-radius: 5px;
-}
-.countries .checkAvailability .datePicker{
-    cursor: pointer;
-    margin: 15px 0;
-    padding: 10px;
-    border-radius: 3px;
-    border: none;
-    width: 100%;
-}
-.countries .checkAvailability .availableBtn{
-    font-size: 0.8em;
-    width: 100%;
-    border-radius: 20px;
-}
-.countries .checkAvailability p{
-    font-size: 0.9em;
-    font-weight: 700;
-    padding-right: 20px;
-    line-height: 22px;
-}
-                                    /* .countries cancelation */
-.countries .cancelation{
-    height: 200px;
-    margin: 30px 15px;
-    padding: 20px;
-    border: 1px solid rgb(206, 205, 205);
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-.countries .cancelation span{
-    color: #636779;
-    font-size: 14px;
-    text-align: center;
-    font-weight: 400;
-    line-height: 20px;
-    margin-top: 4px;
-}
-
-                                    /* .countries search */
-.countries .searchBox{
-    margin: 10px 0;
-    max-width: 240px;
-    height: 40px;
-    border: 1.5px solid rgb(179, 174, 174);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 20px;
-}
-
-.countries .searchBox input{
-    min-width: 180px;
-    height: 40px;
-    border:  none;
-    outline: none;
-    background: transparent;
-}
-.countries .searchBox span{
-    cursor: pointer;
-    background-color: rgb(52, 50, 163);
-    font-size: 20px;
-    color: white;
-    padding: 10px;
+@media screen and (min-width: 851px) {
+  .Navbar #hidden {
+    height: 0;
+    display: none;
+  }
+  .Navbar .navMenu {
     display: flex;
     align-items: center;
+    font-size: 0.7em;
+  }
 }
-.countries .accordian{
-    display: flex;
-    justify-content: end;
+
+/* Home */
+.HomePage .Home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../imgs/bg.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
 }
-.countries .card{
-    box-shadow: 1px 1px 1px 2px #ccc;
+.HomePage .Home .homeContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.HomePage .Home .homeContent h1,
+.HomePage .Home .homeContent p {
+  font-style: italic;
+  color: white;
+  font-size: 2em;
+}
+
+.HomePage .Home .homeContent h1 {
+  font-size: 4em;
+}
+.HomePage .Home .exploreBtn {
+  padding: 15px 25px;
+  background-color: rgb(29, 155, 155);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.HomePage .Home .exploreBtn:hover {
+  background-color: rgb(255, 70, 70);
+  transition: 0.3s ease;
+}
+.HomePage .section-2 {
+  background-color: #ffe9e3;
+  min-height: 50vh;
+  width: 100%;
+}
+.HomePage .section-2 .heading {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.HomePage .section-2 .btnClass {
+  display: flex;
+  justify-content: center;
+}
+.HomePage .section-2 .btnClass .btn {
+  background-color: white;
+  color: rgb(43, 41, 41);
+  font-size: 0.75em;
+  padding: 5px 10px;
+  margin: 5px 5px;
+}
+.HomePage .section-2 .btnClass .btn:hover {
+  background-color: #1a2b49;
+  color: white;
+}
+.HomePage .section-2 .section-2-Child {
+  padding: 40px 20px;
+}
+.HomePage .section-2 .section-2-Child .segment2 {
+  padding: 0 30px;
+}
+.css-lyflox-MuiGrid-root {
+  height: max-content;
+}
+.HomePage .section-2 .section-2-Child .segment1 .img {
+  max-height: 80%;
+  width: 100%;
+  border-radius: 10px;
+}
+/* Rooms */
+.rooms .section1 {
+  background-image: url("../imgs/roomBg.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rooms .section1 h2 {
+  color: white;
+  font-size: 2em;
+}
+.rooms .section1 .text {
+  background-color: rgba(0, 0, 0, 0.582);
+  padding-top: 30px;
+  width: 300px;
+  height: 170px;
+  text-align: center;
+  border-radius: 20px;
+}
+.rooms .section1 .text button {
+  padding: 10px 20px;
+  background-color: rgb(29, 155, 155);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.rooms .section1 .text button:hover {
+  background-color: rgb(255, 70, 70);
+}
+/* rooms section2 */
+.rooms .section2 {
+  min-height: 50vh;
+  padding: 0 20px;
+}
+.rooms .section2 .content {
+  margin: 10px 20px;
+  box-shadow: 1px 1px 5px 2px #ccc;
+  cursor: pointer;
+  min-height: 100px;
+  overflow: hidden;
+}
+.rooms .section2 .content:hover {
+  box-shadow: 2px 2px 10px 3px #ccc;
+}
+.rooms .section2 .search {
+  padding: 20px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.rooms .section2 .search .box {
+  min-height: 40px;
+}
+.rooms .section2 .search .box .roomInput {
+  width: 165px;
+  min-height: 20px;
+}
+.rooms .section2 .search .box .searchBtn {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 193px;
+  height: 35px;
+  padding: 10px;
+  cursor: pointer;
+}
+.rooms .section2 .content .title {
+  font-size: 1.75em;
+  font-weight: 600;
+}
+.rooms .section2 .content .text {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+.rooms .section2 .content .facilities {
+  font-size: 0.8em;
+}
+.rooms .section2 .content button {
+  margin-top: 20px;
+  padding: 5px;
+  background-color: black;
+  width: 120px;
+  color: white;
+  border: none;
+}
+.rooms .section2 .content .img {
+  min-height: 100%;
+}
+.rooms .section2 .search .box .roomInput {
+  width: 193px !important;
+  height: 35px !important;
+  padding: 10px !important;
+  margin-top: 10px !important;
+  cursor: pointer;
+}
+@media screen and (max-width: 899px) {
+  .rooms .search .box {
+    margin: 5px 0;
+  }
+
+  .rooms .section2 .search .box .roomInput {
+    width: 165px;
+    margin-top: 6px;
+    min-height: 20px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .rooms .search .box {
+    margin: 5px 0;
+  }
+  .rooms .section2 .search .box .roomInput {
+    width: 165px;
+    margin-top: 6px;
+    min-height: 20px;
+  }
+  .rooms .section2 .content {
     margin: 10px;
-    min-height: 120px;
-    border-radius: 3px;
-}
-.countries .card:hover{
-    cursor: pointer;
-    box-shadow: 2px 3px 10px 5px #ccc;
-}
-
-                                    /* Countries Search box */
-
-.countries .card .text{
+  }
+  .rooms .section2 .content .imgGrid {
+    height: 130px;
+    width: 100%;
+  }
+  .rooms .section2 .content .title {
     font-size: 1em;
-    font-weight: 600;
-}
-.countries .card .title{
+  }
+  .rooms .section2 .content .text {
+    font-size: 0.65em;
+  }
+  .rooms .section2 .content .facilities {
+    font-size: 0.59em;
+  }
+  .rooms .section2 .content .from {
     font-size: 0.9em;
-    background: #e35252;
-    color: white;
-    max-width: 35%;
-    padding: 2px 0;
-    border-radius: 5px;
-    text-align: center;
+  }
+  .rooms .section2 .content .price {
+    font-size: 0.85em;
+  }
+  .rooms .section2 .content button {
+    margin-top: 15px;
+    padding: 3px;
+    width: 70px;
+    font-size: 0.85em;
+  }
 }
-.countries .card .facilities{
-    font-size: 0.8em;
+.rooms .section2 .content .imgGrid {
+  position: relative;
+  overflow: hidden;
 }
-                                        /* Countries card  */
-.countries .card .img{
-    height: 100%;
+.rooms .section2 .content .img {
+  max-height: 120px;
+  transition: 0.4s ease;
 }
-@media screen and (max-width: 600px){
-    .countries .card .imgGrid{
-        height: 130px;
-        width: 100%;
-    }
-    .countries .card .text{
-        font-size: 0.7em;
-    }
-    .countries .card .title{
-        font-size: 0.6em;
-    }
-    .countries .card .facilities{
-        font-size: 0.7em;
-    }
+.rooms .section2 .content .imgGrid:hover img {
+  transform: scale(1.2);
 }
-@media screen and (max-width: 1198px){
-    .countries{
-        padding: 10px;
-    }
+.rooms .section2 .imgGrid .InfoBtn {
+  position: absolute;
+  background-color: black;
+  bottom: 0;
+  left: 50%;
+  height: 30px;
+  width: 90px;
+  opacity: 0;
+  transition: 0.5s ease;
+  transform: translateX(-50%);
+  font-size: 0.8em;
+  cursor: pointer;
+}
+.rooms .section2 .content img:hover + .InfoBtn,
+.rooms .section2 .content .InfoBtn:hover {
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+@media screen and (max-width: 840px) {
+  .rooms .section2 .content .img {
+    max-height: 120px;
+  }
+}
+/* Countries */
+.countries {
+  padding: 50px;
+  min-height: 100px;
+}
+/* .countries checkAvailability */
+.countries .checkAvailability {
+  background-color: rgb(12, 12, 59);
+  height: 190px;
+  color: white;
+  margin: 0 15px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.countries .checkAvailability .datepicker {
+  cursor: pointer;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  width: 100%;
+}
+.countries .checkAvailability .availableBtn {
+  font-size: 0.8em;
+  width: 100%;
+  border-radius: 20px;
+}
+.countries .checkAvailability p {
+  font-size: 0.9em;
+  font-weight: 700;
+  padding-right: 20px;
+  line-height: 22px;
+}
+/* .countries cancelation */
+.countries .cancelation {
+  height: 200px;
+  margin: 0 15px;
+  padding: 20px;
+  border: 1px solid rgb(206, 205, 205);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.countries .cancelation span {
+  color: #636779;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 4px;
+}
+/* .countries sideMenu */
+.countries .sideMenu {
+  margin: 0 15px;
+  width: 100%;
+}
+.countries .sideMenu .css-ahj2mt-MuiTypography-root {
+  font-size: 2.3em !important;
+}
+@media screen and (max-width: 1199px) {
+  .countries .cancelation {
+    display: none;
+  }
+}
+/* .countries search */
+.countries .searchBox {
+  margin: 10px 0;
+  max-width: 240px;
+  height: 40px;
+  border: 1.5px solid rgb(179, 174, 174);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.countries .searchBox input {
+  min-width: 180px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.countries .searchBox span {
+  cursor: pointer;
+  background-color: rgb(52, 50, 163);
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.countries .accordian {
+  display: flex;
+  justify-content: end;
+}
+.countries .card {
+  box-shadow: 1px 1px 10px 2px #ccc;
+  margin: 10px;
+  min-height: 120px;
+  border-radius: 3px;
+}
+.countries .card:hover {
+  cursor: pointer;
+  box-shadow: 2px 3px 10px 6px #ccc;
+}
+
+/* Countries Search box */
+
+.countries .card .title {
+  font-size: 0.9em;
+  background: #e35252;
+  color: white;
+  max-width: max-content;
+  padding: 2px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+.countries .card .text {
+  font-size: 1em;
+  font-weight: 600;
+}
+.countries .card .facilities {
+  font-size: 0.8em;
+}
+/* Countries card  */
+.countries .card .img {
+  height: 100%;
+  border-radius: 3px 0 0 3px;
+}
+.countries .sideBar {
+  height: fit-content;
+}
+@media screen and (max-width: 600px) {
+  .countries .card .imgGrid {
+    height: 130px;
+    width: 100%;
+  }
+  .countries .card .text {
+    font-size: 0.7em;
+  }
+  .countries .card .title {
+    font-size: 0.6em;
+  }
+  .countries .card .facilities {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 1198px) {
+  .countries {
+    padding: 10px;
+  }
+}
+.countries .header {
+  height: max-content;
+}
+/* Countries End*/
+
+/* Country Details Start */
+.countryDetails {
+  padding: 20px 80px;
+}
+.css-1hts57g-MuiGrid-root {
+  padding: 0 20px 0 0;
+}
+.countryDetails .card .title {
+  font-size: 0.9em;
+  background: #e35252;
+  color: white;
+  max-width: max-content;
+  padding: 4px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+.countryDetails .card .text {
+  font-size: 1.8em;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+.countryDetails .images {
+  border-radius: 20px;
+}
+
+/* Footer Start */
+.Footer {
+  background-color: #1a2b49;
+  min-height: 50px;
+  width: 100%;
+  padding: 50px 30px 0 30px;
+}
+.Footer .section1 {
+  max-height: 300px;
+  margin-bottom: 20px;
+}
+.Footer .section2 {
+  max-height: 200px;
+  margin-bottom: 20px;
+}
+.Footer .section3 {
+  max-height: 200px;
+  margin-bottom: 20px;
+}
+.Footer .section4 {
+  max-height: 200px;
+}
+.Footer .section5 {
+  max-height: 400px;
+}
+.Footer .typography {
+  color: white;
+  font-weight: 800;
+  width: 100%;
+}
+.Footer .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  width: 250px;
+}
+.Footer
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+  background: white;
+  padding: 10px;
+  border-radius: 0;
+  font-weight: 600;
+}
+.Footer .section2 .img {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.Footer .section2 img {
+  height: 40px;
+  width: auto;
+  margin: 5px 0;
+}
+.Footer .section3 .list,
+.Footer .section4 .list,
+.Footer .section5 .list {
+  font-size: 0.9em;
+  color: white;
+  width: 100%;
+  line-height: 30px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Footer .section3 .list:hover,
+.Footer .section4 .list:hover,
+.Footer .section5 .list:hover {
+  text-decoration: underline;
+  color: rgb(168, 164, 164);
+}
+.Footer .section5 .payCards {
+  max-width: 300px;
+}
+.Footer .section5 .payCards .payCardImg {
+  height: auto;
+  width: 50px;
+}
+.Footer .section5 .icons {
+  padding: 20px 0;
+  max-width: 300px;
+}
+.Footer .section5 .icons .iconsItems {
+  color: white;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.Footer .section5 .icons .iconsItems:hover {
+  color: rgb(168, 164, 164);
+}
+.Footer .section5 .text {
+  padding: 0 0 25px 0;
+}
+@media screen and (max-width: 900px) {
+  .Footer .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+    padding: 10px 0;
+    width: 100%;
+  }
+  .Footer .section2 .img {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+  }
+  .Footer .section2 img {
+    padding: 0 10px;
+    width: 130px;
+  }
+  .Footer .section5 .icons {
+    display: flex;
+    justify-content: center;
+  }
+}
+.countryDetails .list {
+  width: 100%;
+  margin-left: 5%;
+}
+/* Modal Start*/
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox*/
+}
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+  background-color: rgba(0, 0, 0, 0.644) !important;
+}
+.imgGallery .modal {
+  position: "relative";
+}
+.imgGallery .modal .leftArrow {
+  position: absolute;
+  color: white;
+  top: 50%;
+  font-size: 2em;
+  cursor: pointer;
+  left: 10px;
+}
+.imgGallery .modal .rightArrow {
+  position: absolute;
+  color: white;
+  top: 50%;
+  font-size: 2em;
+  cursor: pointer;
+  right: 17%;
+}
+.hidescroll::-webkit-scrollbar {
+  display: none;
+}
+.hidescroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.imgGallery .img {
+  overflow-y: scroll;
+  max-height: 410px;
+  cursor: pointer;
+}
+.section-2-Child .heading {
+  width: 100%;
+  text-align: center;
+  padding: 50px 0 0 0 !important;
+  font-size: 2em;
+  font-weight: 800;
+}
+.homePageCard {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.homePageCard .homePageReviews {
+  padding: 5px 0;
+  font-size: 0.85em;
+}
+.homePageCard .homePagePerson {
+  padding: 5px 0;
+  width: 100%;
+}
+.homePageCard .homePageTitle {
+  background-color: #e35252;
+  color: white;
+  font-size: 0.65em;
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+.homePageCard .homePageText {
+  font-size: 0.75em;
+  font-weight: 600;
+}
+.homePageCard .homePageDuration {
+  margin-top: 5px;
+  font-size: 0.65em;
+}
+
+/* About */
+.aboutPage .aboutPageCard {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.aboutPage .aboutPageCard .aboutPageReviews {
+  padding: 5px 0;
+  font-size: 0.85em;
+}
+.aboutPage .aboutPageCard .aboutPagePerson {
+  padding: 5px 0;
+  width: 100%;
+}
+.aboutPage .aboutPageCard .aboutPageTitle {
+  background-color: rgb(46, 169, 173);
+  color: white;
+  font-size: 0.65em;
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+.aboutPage .aboutPageCard .aboutPageText {
+  font-size: 0.75em;
+  font-weight: 600;
+}
+.aboutPage .aboutPageCard .aboutPageDuration {
+  margin-top: 5px;
+  font-size: 0.65em;
 }

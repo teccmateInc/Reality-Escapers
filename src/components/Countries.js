@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import DatePicker from "react-datepicker";
+import { InputDate } from "../helper/meta";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { MdFreeCancellation } from "react-icons/md";
-
+import CustomizedAccordions from "./countryDropDown";
 import {
   CardContent,
   CardMedia,
@@ -21,12 +21,13 @@ import {
   low_to_high,
   high_to_low,
   rating,
-  recommend,
+  clearSearch,
 } from "../redux/reducers/reducer";
+import { NavLink } from "react-router-dom";
 
 const Countries = () => {
   const states = useSelector((state) => state);
-  let { country, searchResults } = states;
+  let { country, searchResults } = states.filterSlice;
   let isSorting = Array.isArray(searchResults) && searchResults.length > 0;
   let data = isSorting ? searchResults : country;
   let length = isSorting ? searchResults.length : country.length;
@@ -50,9 +51,9 @@ const Countries = () => {
     } else if (value == "Ratings") {
       setEmpty("");
       dispatch(rating());
-    } else if (value == "Recommend") {
+    } else if (value == "Clear Search") {
       setEmpty("");
-      dispatch(recommend());
+      dispatch(clearSearch());
     }
   };
 
@@ -83,18 +84,11 @@ const Countries = () => {
       "/" +
       currentDate.getFullYear();
   return (
-    <div className="countries">
-      <Grid container>
-        <Grid sx={{maxHeight:"400px"}} container xs={12} lg={3}>
+      <Grid container className="countries">
+        <Grid sx={{marginBottom:"50px"}} className="sideBar" container xs={12} lg={3}>
           <Grid container className="checkAvailability">
             <p>Enter your dates to find available activities</p>
-            <DatePicker
-              className="datePicker"
-              selected={selectDate}
-              onChange={(date) => setSelectDate(date)}
-              disabledKeyboardNavigation
-              placeholderText={date}
-            />
+            <InputDate className='datepicker' placeholder={"Check Availability"}/>
             <Button variant="contained" className="availableBtn">
               Check Availability
             </Button>
@@ -107,6 +101,9 @@ const Countries = () => {
               activity starts for a full refund.
             </span>
           </Grid>
+          <Grid className="sideMenu">
+              <CustomizedAccordions/>
+          </Grid>
         </Grid>
         <Grid
           container
@@ -114,8 +111,9 @@ const Countries = () => {
           lg={9}
           alignItems="center"
           justifyContent="center"
+          className="header"
         >
-          <Grid container className="header">
+          <Grid container>
             <Grid xs={12} sm={6} className="searchedText">
               <div style={{ padding: "10px 0" }} className="searchTitle">
                 <h3>"{searchTitle}"</h3>
@@ -141,7 +139,6 @@ const Countries = () => {
                   label="Sort By"
                   onChange={handleSort}
                 >
-                  <MenuItem value={"Recommend"}>Recommend</MenuItem>
                   <MenuItem value={"Price Low to High"}>
                     Price Low to High
                   </MenuItem>
@@ -149,6 +146,7 @@ const Countries = () => {
                     Price High to Low
                   </MenuItem>
                   <MenuItem value={"Ratings"}>Ratings</MenuItem>
+                  <MenuItem value={"Clear Search"}>Clear Search</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
@@ -169,6 +167,7 @@ const Countries = () => {
             {empty}
           </Grid>
           {data.map((value, index) => (
+            <NavLink style={{textDecoration:"none",color:"black"}} to={`/countries/${index}`}>
             <Grid className="card" container key={index} xs={12}>
               <Grid className="imgGrid" sm={3}>
                 <CardMedia
@@ -233,10 +232,10 @@ const Countries = () => {
                 </CardContent>
               </Grid>
             </Grid>
+            </NavLink>
           ))}
         </Grid>
       </Grid>
-    </div>
   );
 };
 
